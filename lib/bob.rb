@@ -1,8 +1,8 @@
 require_relative "building.rb"
 class Bob
-  puts "how many floors should this building have?"
+  puts "How many floors should this building have?"
   floors = gets.chomp.to_i
-  puts Building.new(floors).construct
-
-
+  puts 'Should it have an antenna?'
+  antenna = gets.chomp
+  puts Building.new(floors, antenna).construct
 end
