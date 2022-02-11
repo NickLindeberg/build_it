@@ -1,11 +1,11 @@
 require "./lib/building.rb"
 require 'minitest/autorun'
 require 'minitest/pride'
-# require 'pry'; binding.pry
 
 class BuildingTest <Minitest::Test
   def setup
-    @building = Building.new(1)
+    @building = Building.new(1, "no")
+    @building_with_antenna = Building.new(1, "yes")
   end
 
   def test_it_exists
@@ -24,4 +24,7 @@ class BuildingTest <Minitest::Test
     assert_equal "  ___  \n |___| \n_|___|_", @building.construct
   end
 
+  def test_it_can_have_antenna
+    assert_equal "   I   \n  _I_  \n |___| \n_|___|_", @building_with_antenna.construct
+  end
 end
